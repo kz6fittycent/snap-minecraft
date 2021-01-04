@@ -1,6 +1,6 @@
 name: mc-installer
 title: Minecraft Installer
-version: '7.2'
+version: '7.3'
 summary: A simple installer for Minecraft - Java Edition
 description: | 
   A simple installer for Minecraft - Java Edition. 
@@ -59,9 +59,9 @@ parts:
     plugin: nil
     build-snaps:  # List all content-snaps and base snaps you're using here
       - core18
-      - gnome-3-28-1804
+      - gnome-3-34-1804
     override-prime: |
       set -eux
-      for snap in "core18" "gnome-3-28-1804"; do  # List all content-snaps and base snaps you're using here
+      for snap in "core18" "gnome-3-34-1804"; do  # List all content-snaps and base snaps you're using here
         cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
       done

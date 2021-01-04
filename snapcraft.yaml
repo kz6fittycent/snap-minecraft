@@ -16,7 +16,7 @@ architectures:
 apps:
   mc-installer:
     extensions:
-      - gnome-3-28
+      - gnome-3-34
     command: launch
     plugs:
       - network
@@ -26,7 +26,7 @@ apps:
       - browser-support
       - home
     environment:
-      PYTHONPATH: $SNAP_DESKTOP_RUNTIME/usr/lib/python3.6/dist-packages
+      PYTHONPATH: $SNAP_DESKTOP_RUNTIME/usr/lib/python3.6/site-packages
       JAVA_HOME: $SNAP/usr/lib/jvm/java-8-openjdk-amd64/
 
 parts:

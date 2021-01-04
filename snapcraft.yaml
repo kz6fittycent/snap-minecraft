@@ -16,7 +16,7 @@ architectures:
 apps:
   mc-installer:
     extensions:
-      - gnome-3-34
+      - gnome-3-28
     command: launch
     plugs:
       - network
@@ -38,8 +38,6 @@ parts:
     plugin: nil
     build-packages:
       - openjdk-8-jre-headless        
-      # Fix for "package contains external symlinks" issue
-      # https://forum.snapcraft.io/t/resolve-package-contains-external-symlinks-error-when-trying-to-snap/2963
       - ca-certificates
       - ca-certificates-java
     stage-packages:
@@ -50,19 +48,17 @@ parts:
       - libxss1
       - libgconf2-4
       - libcurl3
-      - libpango-1.0-0
   
-  # https://snapcraft-utils-library.readthedocs.io/en/latest/lib/cleanup.html
   cleanup:
-    after:  # Make this part run last; list all your other parts here
+    after: 
       - game
       - launcher
     plugin: nil
-    build-snaps:  # List all content-snaps and base snaps you're using here
+    build-snaps:  
       - core18
-      - gnome-3-34-1804
+      - gnome-3-28-1804
     override-prime: |
       set -eux
-      for snap in "core18" "gnome-3-34-1804"; do  # List all content-snaps and base snaps you're using here
+      for snap in "core18" "gnome-3-28-1804"; do  # List all content-snaps and base snaps you're using here
         cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
       done

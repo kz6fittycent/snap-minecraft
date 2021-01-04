@@ -26,7 +26,7 @@ apps:
       - browser-support
       - home
     environment:
-      PYTHONPATH: $SNAP_DESKTOP_RUNTIME/usr/lib/python3.6/site-packages
+      PYTHONPATH: $SNAP_DESKTOP_RUNTIME/usr/lib/python3.6/dist-packages
       JAVA_HOME: $SNAP/usr/lib/jvm/java-8-openjdk-amd64/
 
 parts:
